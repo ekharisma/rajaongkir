@@ -4,20 +4,18 @@ namespace Kavist\RajaOngkir;
 
 use Kavist\RajaOngkir\Contracts\HttpClientContract;
 use Kavist\RajaOngkir\Contracts\SearchDriverContract;
-use Kavist\RajaOngkir\HttpClients\AbstractClient;
 use Kavist\RajaOngkir\HttpClients\BasicClient;
 use Kavist\RajaOngkir\Resources\Kota;
 use Kavist\RajaOngkir\Resources\OngkosKirim;
 use Kavist\RajaOngkir\Resources\Provinsi;
-use Kavist\RajaOngkir\SearchDrivers\AbstractDriver;
 use Kavist\RajaOngkir\SearchDrivers\BasicDriver;
 
 class RajaOngkir
 {
-    /** @var \Kavist\RajaOngkir\Contracts\HttpClientContract */
+    /** @var HttpClientContract */
     protected $httpClient;
 
-    /** @var \Kavist\RajaOngkir\Contracts\SearchDriverContract */
+    /** @var SearchDriverContract */
     protected $searchDriver;
 
     /** @var array */
@@ -42,7 +40,7 @@ class RajaOngkir
     }
 
     /**
-     * @param \Kavist\RajaOngkir\Contracts\HttpClientContract $httpClient
+     * @param HttpClientContract $httpClient
      * @return self
      */
     public function setHttpClient(HttpClientContract $httpClient): self
@@ -55,7 +53,7 @@ class RajaOngkir
     }
 
     /**
-     * @param \Kavist\RajaOngkir\Contracts\SearchDriverContract $searchDriver
+     * @param SearchDriverContract $searchDriver
      * @return self
      */
     public function setSearchDriver(SearchDriverContract $searchDriver): self
@@ -66,7 +64,7 @@ class RajaOngkir
     }
 
     /**
-     * @return \Kavist\RajaOngkir\Resources\Provinsi;
+     * @return Provinsi;
      */
     public function provinsi(): Provinsi
     {
@@ -81,7 +79,7 @@ class RajaOngkir
     }
 
     /**
-     * @return \Kavist\RajaOngkir\Resources\Kota;
+     * @return Kota;
      */
     public function kota(): Kota
     {
@@ -97,7 +95,7 @@ class RajaOngkir
 
     /**
      * @param array $payload
-     * @return \Kavist\RajaOngkir\Resources\OngkosKirim;
+     * @return OngkosKirim;
      */
     public function ongkosKirim(array $payload): OngkosKirim
     {
@@ -105,7 +103,7 @@ class RajaOngkir
     }
 
     /**
-     * @return \Kavist\RajaOngkir\Resources\OngkosKirim;
+     * @return OngkosKirim;
      */
     public function ongkir(array $payload): OngkosKirim
     {
@@ -113,7 +111,7 @@ class RajaOngkir
     }
 
     /**
-     * @return \Kavist\RajaOngkir\Resources\OngkosKirim;
+     * @return OngkosKirim;
      */
     public function biaya(array $payload): OngkosKirim
     {
